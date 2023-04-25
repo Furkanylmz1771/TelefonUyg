@@ -1,0 +1,48 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Bakiye
+{
+     class Program
+    {
+        static void Main(string[] args)
+        {
+            Telefon kullanıcı = new Telefon();       // Class'tan nesne oluşturma          telefon adında yeni obje oluşturuldu
+
+            kullanıcı.isim = "Furkan";
+            kullanıcı.soyisim = "Yılmaz";
+            kullanıcı.tel_marka = "Xiaomi";
+            kullanıcı.tel_Fiyatı = 5000;
+            kullanıcı.işletim_sistemi = "Android";
+            kullanıcı.ram_boyutu = 4;
+
+            while (true){
+                Console.Write("Seçim yapınız : ");
+
+                int secim = Convert.ToInt32(Console.ReadLine());
+
+                if (secim == 1) {
+                    kullanıcı.KişiselBilgiler();
+                }
+                else if (secim == 2) {
+                    kullanıcı.TelefonBilgiler();
+                }
+                else if (secim == 3) {
+                    Console.Write("Bakiyenizi giriniz : ");
+                    kullanıcı.bakiye = Convert.ToInt32(Console.ReadLine());
+                    kullanıcı.AlımGücü();
+                }
+                else
+                {
+                    Console.WriteLine("Hatalı seçim");
+                    break;
+                } 
+            
+            }
+           
+        } 
+    }   
+}
